@@ -1,0 +1,66 @@
+# Copyright (c) 2014-2017 Arduino LLC.  All right reserved.
+#
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+# EZSBC SAM-E70 (Prorgamming Port)
+# ---------------------------------------
+ezsammy.name=EZSBC SAM-E70 (Programming Port)
+
+ezsammy.upload.tool=openocd
+ezsammy.upload.protocol=sam-ba
+ezsammy.upload.maximum_size=262144
+ezsammy.upload.maximum_data_size=32768
+ezsammy.upload.use_1200bps_touch=false
+ezsammy.upload.wait_for_upload_port=false
+ezsammy.upload.native_usb=false
+ezsammy.build.mcu=ATSAME70N21
+ezsammy.build.f_cpu=48000000L
+ezsammy.build.usb_product=SAME70
+ezsammy.build.usb_manufacturer=EZSBC
+ezsammy.build.board=SAME_SEVENTY
+ezsammy.build.core=arduino
+ezsammy.build.extra_flags=-D__ATESAME70N21__ {build.usb_flags}
+ezsammy.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+ezsammy.build.openocdscript=openocd_scripts/ezsbc_same70.cfg
+ezsammy.build.variant=ezsammy
+ezsammy.build.variant_system_lib=
+ezsammy.bootloader.tool=openocd
+ezsammy.bootloader.file=zero/samd21_sam_ba.bin
+
+# EZSBC SAM-E70 (Native USB Port)
+# --------------------------------------
+ezsammy.name=EZSBC SAM-E70 (Native USB Port)
+
+ezsammy.upload.tool=bossac
+ezsammy.upload.protocol=sam-ba
+ezsammy.upload.maximum_size=262144
+ezsammy.upload.maximum_data_size=32768
+ezsammy.upload.use_1200bps_touch=true
+ezsammy.upload.wait_for_upload_port=true
+ezsammy.upload.native_usb=true
+ezsammy.build.mcu=ATSAME70N21
+ezsammy.build.f_cpu=48000000L
+ezsammy.build.usb_product=SAME70
+ezsammy.build.usb_manufacturer=EZSBC
+ezsammy.build.board=SAMD_ZERO
+ezsammy.build.core=arduino
+ezsammy.build.extra_flags=-D__ATESAME70N21__ {build.usb_flags}
+ezsammy.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+ezsammy.build.openocdscript=openocd_scripts/ezsbc_same70.cfg
+ezsammy.build.variant=ezsammy
+ezsammy.build.variant_system_lib=
+ezsammy.bootloader.tool=openocd
+ezsammy.bootloader.file=zero/samd21_sam_ba.bin
+
